@@ -1,0 +1,303 @@
+/*/////////////////////////////
+GLOBALS*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  transition: all 200ms ease-in;
+}
+body{
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: #f8f8f8;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+p{
+  font-size: 1.1em;
+}
+ul, li{
+  list-style-position: inside;
+  font-size: 1.06em;
+  margin-bottom: .7rem;
+}
+img{
+  font-size: 19rem;
+  font-weight: 900;
+  font-style: italic;
+  text-overflow: ellipsis;
+  max-width: 500px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+h2{margin: 1rem 0 1rem 0}
+a{
+  text-decoration: none;
+  color: initial;
+}
+.hamburger, header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 2.5rem;
+  background-color: #0003;
+  border: none;
+  padding: 3px;
+  backdrop-filter: blur(30px);
+  transition: all 200ms ease-in;
+  img {
+    width: 2rem;
+    aspect-ratio: 1;
+    position: absolute;
+    bottom: .3rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+header.open{
+  height: 200px;
+
+  nav dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    li{
+      height: 100%;
+      min-width: 50px;
+    }
+  }
+}
+
+header{
+  position: sticky;
+  top: -1rem;
+  background-color: #0004;
+  backdrop-filter: blur(33px);
+  width: 100%;
+  padding: .7rem;
+  transition: all 100ms ease-in;
+  nav{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+    dl{
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      color: #fff;
+    }
+  }
+}
+
+header.js{
+  box-shadow: 0 3px 7px 1px #0003;
+  top: 0;
+}
+.hero{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background:
+    url(images/grapics/mpatapo.svg) -2rem 5rem/ 30rem no-repeat, linear-gradient(90deg, #888, #fff);
+}
+.header-intro{
+  margin-right: -3rem;
+  margin-left: 3rem;
+  h2 {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.header-intro h1{
+  justify-self: center;
+  font-family: rubik;
+  color: #d00;
+  font-size: 6rem;
+}
+.header-content img {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 80%;
+  min-width: 50%;
+}
+address{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin:3rem 1rem;
+  flex-wrap: wrap;
+}
+address section{
+  width: 100%;
+  border-radius: 1rem;
+  background-color: #fff;
+  max-width: 350px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px -3px#3335;
+  border: solid 1px #3332;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  img {
+    width: 3rem;
+  }
+}
+.box{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: solid 1px #f0f0f0;
+  padding: 4rem;
+  width: 100%;
+  h2{
+    font-size: 3rem;
+  }
+
+  img {
+    width: 40vw;
+  }
+  article{
+    line-height: 1.6;
+    max-width: 600px;
+  }
+}
+.box:nth-child(even), article{
+  order: 1;
+}
+.box hr{
+  height: .6rem;
+  width: 5rem;
+  border: 0;
+  border-radius: 1rem;
+  margin: -.8rem 0 1rem 1rem;
+}
+#objective{
+  display: grid;
+  background-color: #fff;
+  hr{
+    box-shadow: 
+      inset 1px -1px 1px #872,
+      -2px 2px 1px #a72,
+      1px -1px 1px -1px#972,
+      inset -2px 2px 1px #ffefbf;
+    background-color: #f4bf30;
+  }
+}
+#skills{
+  background-color: #fff;
+  hr{
+    background-color: #f09fff;
+    margin: -.8rem 1rem 1rem 0;
+    box-shadow:
+      -2px 2px 1px #d888f7,
+      inset -2px 2px 1px #f8bfff,
+      inset 2px -2px 1px #f0b0ff,
+      1px -1px #d888f099
+      ;
+  }
+}
+#skills > div{
+  display: grid;
+  order: 1;
+  text-align: end;
+  justify-items: end;
+}
+#experience, #additional{
+  display: grid;
+  padding: 1rem 2rem;
+
+  > div {
+    text-align: center;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    div{
+      width: 100%;
+      flex-shrink: 0;
+    }
+    img {
+      max-width: 5rem;
+    }
+    strong { 
+      font-family:'rubik', 'sans-serif';
+      font-size: 2.6rem;
+    }
+    img, strong{
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px -2px #0006;
+    }
+  }
+
+  article{
+    position: relative;
+    max-width: 660px;
+    left: 50%;
+    translate: -50%;
+  }
+}
+#additional{
+  background-color: #fff;
+}
+footer{
+  padding: 1rem 2rem; 
+  background-color: #aaa;
+  text-align: center;
+}
+
+@media (max-width: 700px){
+  h1{
+    font-size: 3.9rem !important;
+  }
+  h2{
+    font-size: 2rem !important;
+  }
+  ul, li{
+    margin-bottom: .6rem;
+    line-height: 1.3;
+    font-size: 1em;
+  }
+  .hero{
+    background:
+    url(images/grapics/mpatapo.svg) -2rem 5rem/ 60% no-repeat, linear-gradient(90deg, #888, #fff);
+  }
+  .box{
+    padding: 3rem 0.8rem;
+    grid-template-rows: auto;
+    grid-template-columns: none;
+    align-items: center;
+    justify-items: center !important;
+
+  }
+  #skills{
+    article{
+      order: 2;
+    }
+  }
+  #experience{
+    img {
+      width: 4rem;
+    }
+    strong{
+      font-size: 2rem !important;
+    }
+    img, strong{
+      padding: .6rem !important;
+    }
+  }
+}
