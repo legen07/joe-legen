@@ -211,6 +211,10 @@ address section{
   text-align: end;
   justify-items: end;
 }
+
+#experience{
+  background-color: #fff;
+}
 #experience, #additional{
   display: grid;
   padding: 1rem 2rem;
@@ -258,6 +262,11 @@ footer{
   padding: 1rem 2rem; 
   background-color: #aaa;
   text-align: center;
+
+  a{
+    text-decoration: underline;
+    color: #04f;
+  }
 }
 
 @media (max-width: 700px){
