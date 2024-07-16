@@ -1,0 +1,44 @@
+{
+  "name": "joe-legen",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A website About my self(Joe Legen). My portfolio. Hoping I get a job. At least something that will get me started.  ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legen07/joe-legen.git"
+  },
+  "keywords": [
+    "Joe",
+    "legen",
+    "website",
+    "developer",
+    "full",
+    "stack",
+    "developer",
+    "html",
+    "css",
+    "javascript",
+    "jquery.",
+    "Afful",
+    "Godfred"
+  ],
+  "author": "Joe Legen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/legen07/joe-legen/issues"
+  },
+  "homepage": "https://github.com/legen07/joe-legen#readme",
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-scss": "^1.4.0",
+    "pug": "^3.0.3",
+    "sass": "^1.77.8",
+    "scss": "^0.2.4"
+  }
+}
