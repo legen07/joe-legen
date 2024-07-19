@@ -21,6 +21,7 @@ body{
   font-family: 'Fira Sans', Helvetica, sans-serif;
   overflow-x: hidden;
   background-color: #f8f8f8;
+  /* max-width: 500px; */
 }
 body::-webkit-scrollbar{
   display: none;
@@ -164,6 +165,18 @@ address section{
     width: 3rem;
   }
 }
+
+.willing {
+  border-radius:1rem ;
+  border: solid 1px #9996;
+  background-color: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .box{
   display: grid;
   align-items: center;

@@ -26,9 +26,6 @@ document.addEventListener('click', function(e){
   }
 })
 
-let oldImgName = document.querySelectorAll('.screenshots div img');
-
-oldImgName = [...oldImgName]
 let changed = !0
 function addPhoneImages(){
   if (window.innerWidth < 600 && changed) {
@@ -43,9 +40,6 @@ function addPhoneImages(){
       $(each).attr('src', RegExp(/.*(?=\_phone.)/).exec(imageName) + '.webp')
       changed = !0
     })
-    // for (let i = 0; i <= 3; i++) {
-      // $($('.screenshots div img')[i]).replaceWith(oldImgName[i]);
-    // }
   }
 }
 addPhoneImages()
