@@ -1,4 +1,3 @@
-
 let header = document.querySelector('header');
 let headerHtml = header.innerHTML;
 window.addEventListener('scroll', function(e) {
@@ -25,4 +24,62 @@ document.addEventListener('click', function(e){
     case e.target.classList.contains('ho'):
       hamburgerOpener(e);
   }
+})
+
+let oldImgName = document.querySelectorAll('.screenshots div img');
+
+oldImgName = [...oldImgName]
+let changed = !0
+function addPhoneImages(){
+  if (window.innerWidth < 600 && changed) {
+    $('.screenshots div img').each((i, each) => {
+      const imageName = $(each).attr('src');
+      $(each).attr('src', RegExp(/.*(?=\.)/).exec(imageName) + '_phone.webp')
+    })
+    changed = !1
+  } else if (window.innerWidth > 600 && !changed) {
+    $('.screenshots div img').each((i, each) => {
+      const imageName = $(each).attr('src');
+      $(each).attr('src', RegExp(/.*(?=\_phone.)/).exec(imageName) + '.webp')
+      changed = !0
+    })
+    // for (let i = 0; i <= 3; i++) {
+      // $($('.screenshots div img')[i]).replaceWith(oldImgName[i]);
+    // }
+  }
+}
+addPhoneImages()
+
+$(window).on('resize', addPhoneImages)
+
+window.addEventListener('scroll', function (e){
+
+  $('#experience .screenshots div').each((i, each) => {
+    if (each.getBoundingClientRect().top < (window.innerHeight + 200)) {
+      clientTop = each.getBoundingClientRect().top;
+
+      const blurry = (((clientTop - window.innerHeight / window.innerHeight ) * 100) * -.00013) * -1;
+
+      blurry > 4 ? $(each).css('filter', 'blur(' + blurry+'px)') : $(each).css('filter', 'blur(0)')
+    
+      const newScale = ((((clientTop - window.innerHeight / window.innerHeight ) * 100) * -.001) *.2) + 85
+    
+      $(each).css({'transform': 'scale(' + newScale + '%)'})
+    }
+
+    if (each.getBoundingClientRect().bottom < (window.innerHeight * .38)) {
+      $(each).addClass('js');
+    } else {
+      $(each).removeClass('js')
+    }
+  })
+
+  $('#objective >, #education >, #skills > h2, .languages-technologies >, #my-scripts > h2, #my-scripts > article >').each((i, each) => {
+
+    if (each.getBoundingClientRect().top < (window.innerHeight * 0.80)) {
+      $(each).addClass('cls')
+    } else {
+      $(each).removeClass('cls')
+    }
+  })
 })
