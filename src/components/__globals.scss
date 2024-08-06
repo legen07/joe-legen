@@ -8,7 +8,7 @@
 }
 @font-face {
   font-family: "FiraSans-semi-bold";
-  src: url(./../fonts/FiraSans-semiBold.woff2);
+  src: url(./fonts/FiraSans-semiBold.woff2);
 }
 @font-face {
   font-family: "FiraSans-extra-bold";
@@ -33,31 +33,33 @@
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 0;
-  
   cursor: pointer;
-  
-  &[close]:hover{
-    stroke-linecap: butt ;
-    stroke-dasharray: 5px;
-  }
 }
 
+[data-close]:hover {
+  transform: scale(110%);
+}
 div:has(> svg) {
   cursor: pointer;
 }
 
-p{
+p {
   font-size: 90%;
 }
+
+b {
+  font-family: "FiraSans-bold", Arial, Helvetica, sans-serif;
+}
+
 * {
   box-sizing: border-box;
   transition: all 200ms ease;
-  font-family: 'FiraSans-Regular', Arial, Helvetica, sans-serif;
+  font-family: "FiraSans-Regular", Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
 }
 
-strong{
-  font-stretch:narrower ;
+strong {
+  font-stretch: narrower;
   font-optical-sizing: 20px;
 }

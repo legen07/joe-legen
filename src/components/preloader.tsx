@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./preloader.scss";
 
-export function Preloader() {
+const Preloader = () => {
   const [loader, setLoader] = useState(0);
   const [Sec, SetSec] = useState("0");
   const [Milli, SetMilli] = useState("0");
@@ -35,3 +35,6 @@ export function Preloader() {
 
   return preload();
 }
+
+
+export default memo(Preloader)
