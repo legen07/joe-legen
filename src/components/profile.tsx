@@ -22,7 +22,7 @@ const Profile = forwardRef<HTMLDivElement>((props, profileBack) => {
             <span>Available</span>
           </div>
         </div>
-        <h2 className="reported">Reported Addicted to Website development</h2>
+        <h2 className="reported">Addicted to Website development</h2>
         <h2 className="coding-junky">
           <div>coding </div>
           <div>#junky</div>
